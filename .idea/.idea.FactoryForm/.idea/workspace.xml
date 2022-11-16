@@ -8,21 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="007bae12-79c6-4f85-961d-056190d3544c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.FactoryForm/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Factory.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryDomain/Factory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryDomain/Helpers/FactoryHelper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryForm/App.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryForm/FactoryForm.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryForm/Form1.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryForm/Form1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryForm/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryForm/Properties/AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryForm/Properties/Resources.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryForm/Properties/Resources.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryForm/Properties/Settings.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FactoryForm/Properties/Settings.settings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FactoryForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FactoryForm/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +34,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -79,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668506901455</updated>
-      <workItem from="1668506908841" duration="6676000" />
+      <workItem from="1668506908841" duration="7713000" />
     </task>
     <servers />
   </component>

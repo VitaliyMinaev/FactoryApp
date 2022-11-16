@@ -25,6 +25,24 @@ public class Factory : IComparable<Factory>
         EmployeeSalary = MasterSalary = 0;
         ProfitFromEmployee = ProfitFromMaster = 0;
     }
+
+    public Factory(string titleOfFactory, int countOfWorkshop, int countOfEmployee, int countOfMasters,
+        int employeeSalary, int masterSalary, int profitFromEmployee, int profitFromMaster)
+    {
+        if (CheckNumberOfEmployeeAndMaster(countOfEmployee, countOfMasters) == false)
+        {
+            throw new ArgumentException("Inappropriate balance between employee and masters");
+        }
+        
+        Title = titleOfFactory;
+        CountOfWorkshop = countOfWorkshop;
+        CountOfEmployee = countOfEmployee;
+        CountOfMasters = countOfMasters;
+        EmployeeSalary = employeeSalary;
+        MasterSalary = masterSalary;
+        ProfitFromEmployee = profitFromEmployee;
+        ProfitFromMaster = profitFromMaster;
+    }
     
     /* Copy Constructor */
     public Factory(Factory other)
@@ -47,7 +65,7 @@ public class Factory : IComparable<Factory>
     /* Business logic */
     public bool HireEmployee()
     {
-        if (CountOfEmployee == 0 || CountOfEmployee % 10 != 0)
+        if (CheckNumberOfEmployeeAndMaster(CountOfEmployee, CountOfMasters))
         {
             CountOfEmployee += 1;
             return true;
@@ -59,9 +77,24 @@ public class Factory : IComparable<Factory>
     }
     public bool HireMaster()
     {
-        if (CountOfEmployee % 10 == 0 && CountOfEmployee / 10 == CountOfMasters + 1)
+        if (CheckNumberOfEmployeeAndMaster(CountOfEmployee, CountOfMasters))
         {
             CountOfMasters += 1;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool CheckNumberOfEmployeeAndMaster(int countOfEmployee, int countOfMasters)
+    {
+        if (countOfMasters == 0 && countOfEmployee == 0)
+            return true;
+        
+        if (countOfEmployee + 1 <= countOfMasters * 10 && (countOfMasters * 10 - (countOfEmployee + 1) < 10))
+        {
             return true;
         }
         else

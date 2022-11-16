@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryForm", "FactoryForm\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryDomain", "FactoryDomain\FactoryDomain.csproj", "{39347A38-CF56-4F8A-8893-26BF253E75FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryTests", "FactoryTests\FactoryTests.csproj", "{84965EFD-8B33-4A72-9562-3D0B7E385342}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{39347A38-CF56-4F8A-8893-26BF253E75FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39347A38-CF56-4F8A-8893-26BF253E75FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39347A38-CF56-4F8A-8893-26BF253E75FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84965EFD-8B33-4A72-9562-3D0B7E385342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84965EFD-8B33-4A72-9562-3D0B7E385342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84965EFD-8B33-4A72-9562-3D0B7E385342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84965EFD-8B33-4A72-9562-3D0B7E385342}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -110,5 +110,45 @@ namespace FactoryForm
                 await JsonSerializer.SerializeAsync<List<Factory>>(stream, factories);
             }
         }
+
+        private void HireEmployeeButton_Click(object sender, EventArgs e)
+        {
+            if (factoriesListView.SelectedItems.Count == 0)
+                return;
+
+            var factory = (Factory)factoriesListView.SelectedItems[0].Tag;
+            factory.HireEmployee();
+            CountOfEmployeeTextBox.Text = factory.CountOfEmployee.ToString();
+        }
+
+        private void FireEmployeeButton_Click(object sender, EventArgs e)
+        {
+            if (factoriesListView.SelectedItems.Count == 0)
+                return;
+
+            var factory = (Factory)factoriesListView.SelectedItems[0].Tag;
+            factory.FireEmployee();
+            CountOfEmployeeTextBox.Text = factory.CountOfEmployee.ToString();
+        }
+
+        private void HireMasterButton_Click(object sender, EventArgs e)
+        {
+            if (factoriesListView.SelectedItems.Count == 0)
+                return;
+
+            var factory = (Factory)factoriesListView.SelectedItems[0].Tag;
+            factory.HireMaster();
+            CountOfMasterTextBox.Text = factory.CountOfMasters.ToString();
+        }
+
+        private void FireMasterButton_Click(object sender, EventArgs e)
+        {
+            if (factoriesListView.SelectedItems.Count == 0)
+                return;
+
+            var factory = (Factory)factoriesListView.SelectedItems[0].Tag;
+            factory.FireMaster();
+            CountOfMasterTextBox.Text = factory.CountOfMasters.ToString();
+        }
     }
 }

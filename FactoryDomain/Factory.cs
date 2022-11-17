@@ -29,7 +29,7 @@ public class Factory : IComparable<Factory>
     public Factory(string titleOfFactory, int countOfWorkshop, int countOfEmployee, int countOfMasters,
         int employeeSalary, int masterSalary, int profitFromEmployee, int profitFromMaster)
     {
-        if (CheckNumberOfEmployeeAndMaster(countOfEmployee, countOfMasters) == false)
+        if (EstimateNumberOfEmployeeAndMaster(countOfEmployee, countOfMasters) == false)
         {
             throw new ArgumentException("Inappropriate balance between employee and masters");
         }
@@ -65,7 +65,7 @@ public class Factory : IComparable<Factory>
     /* Business logic */
     public bool HireEmployee()
     {
-        if (CheckNumberOfEmployeeAndMaster(CountOfEmployee, CountOfMasters))
+        if (EstimateNumberOfEmployeeAndMaster(CountOfEmployee + 1, CountOfMasters))
         {
             CountOfEmployee += 1;
             return true;
@@ -77,7 +77,7 @@ public class Factory : IComparable<Factory>
     }
     public bool HireMaster()
     {
-        if (CheckNumberOfEmployeeAndMaster(CountOfEmployee, CountOfMasters))
+        if (EstimateNumberOfEmployeeAndMaster(CountOfEmployee, CountOfMasters + 1))
         {
             CountOfMasters += 1;
             return true;
@@ -88,30 +88,15 @@ public class Factory : IComparable<Factory>
         }
     }
 
-    private bool CheckNumberOfEmployeeAndMaster(int countOfEmployee, int countOfMasters)
-    {
-        if (countOfMasters == 0 && countOfEmployee == 0)
-            return true;
-        
-        if (countOfEmployee + 1 <= countOfMasters * 10 && (countOfMasters * 10 - (countOfEmployee + 1) < 10))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    public int FireEmployee()
+    public bool FireEmployee()
     {
         CountOfEmployee -= 1;
-        return CountOfEmployee;
+        return true;
     }
-    public int FireMaster()
+    public bool FireMaster()
     {
         CountOfMasters -= 1;
-        return CountOfMasters;
+        return true;
     }
 
 
@@ -157,5 +142,17 @@ public class Factory : IComparable<Factory>
             ? first.ProfitFromMaster : second.ProfitFromMaster;
 
         return newFactory;
+    }
+    
+    private bool EstimateNumberOfEmployeeAndMaster(int countOfEmployee, int countOfMasters)
+    {
+        if (countOfEmployee <= countOfMasters * 10 && (countOfEmployee == 0 || countOfMasters * 10 - countOfEmployee < 10))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

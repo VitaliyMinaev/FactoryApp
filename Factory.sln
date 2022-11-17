@@ -1,10 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryForm", "FactoryForm\FactoryForm.csproj", "{C8EF0B07-242C-42AF-9E3F-A95D277A4BD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryDomain", "FactoryDomain\FactoryDomain.csproj", "{39347A38-CF56-4F8A-8893-26BF253E75FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryDomain", "FactoryDomain\FactoryDomain.csproj", "{39347A38-CF56-4F8A-8893-26BF253E75FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryTests", "FactoryTests\FactoryTests.csproj", "{84965EFD-8B33-4A72-9562-3D0B7E385342}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryTests", "FactoryTests\FactoryTests.csproj", "{84965EFD-8B33-4A72-9562-3D0B7E385342}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +27,11 @@ Global
 		{84965EFD-8B33-4A72-9562-3D0B7E385342}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84965EFD-8B33-4A72-9562-3D0B7E385342}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84965EFD-8B33-4A72-9562-3D0B7E385342}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9724FB30-2B70-4EAF-92B3-CA66DB61C9CD}
 	EndGlobalSection
 EndGlobal

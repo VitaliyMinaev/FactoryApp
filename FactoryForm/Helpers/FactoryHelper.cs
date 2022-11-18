@@ -6,6 +6,7 @@ namespace FactoryForm.Helpers
     {
         public static int CalculateProfit(this Factory factory, int investedMoney)
         {
+            int countOfNewEmployee = 0, countOfNewMasters = 0;
             while (investedMoney >= factory.EmployeeSalary)
             {
                 bool operationSuccess = factory.HireEmployee();
@@ -13,11 +14,13 @@ namespace FactoryForm.Helpers
                 if (operationSuccess == true)
                 {
                     investedMoney -= factory.EmployeeSalary;
+                    countOfNewEmployee += 1;
                 }
                 else if (investedMoney >= factory.MasterSalary)
                 {
                     factory.HireMaster();
                     investedMoney -= factory.MasterSalary;
+                    countOfNewMasters += 1;
                 }
                 else
                 {
@@ -25,7 +28,7 @@ namespace FactoryForm.Helpers
                 }
             }
 
-            return factory.CountOfEmployee * factory.ProfitFromEmployee + factory.CountOfMasters * factory.ProfitFromMaster;
+            return countOfNewEmployee * factory.ProfitFromEmployee + countOfNewMasters * factory.ProfitFromMaster;
         }
     }
 }

@@ -318,5 +318,34 @@ namespace FactoryForm
 
             return new Tuple<Factory, Factory>(firstFactory, secondFactory);
         }
+
+        private void CalculateProfitButton_Click(object sender, EventArgs e)
+        {
+            string factoryTitle = ProfitFactoryTextBox.Text;
+            
+            ListViewItemCollection factories = factoriesListView.Items;
+            Factory profitFactory = null;
+
+            foreach (ListViewItem item in factories)
+            {
+                var factory = item.Tag as Factory;
+                if (factory.Title == factoryTitle)
+                {
+                    profitFactory = factory;
+                }
+            }
+
+            if (profitFactory == null)
+            {
+                string errorMessage = $"There is not factory with title: {factoryTitle}";
+                MessageBox.Show(errorMessage, "Error");
+            }
+
+            int investedMoney = MoneyParser.ParseStringToCents(ProfitSumTextBox.Text);
+            
+            double profit = profitFactory.CalculateProfit(investedMoney) / 100;
+
+            MessageBox.Show($"Your profit for 1 month: {profit}$", "Profit");
+        }
     }
 }

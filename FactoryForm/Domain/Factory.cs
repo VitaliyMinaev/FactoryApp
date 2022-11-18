@@ -124,11 +124,11 @@ namespace FactoryForm.Domain
                 throw new ArgumentNullException($"Comparable factory can not be null");
             }
 
-            if (this.CountOfWorkshop < other.CountOfWorkshop)
+            if (this.CountOfWorkshop > other.CountOfWorkshop)
             {
                 return 1;
             }
-            else if (this.CountOfWorkshop > other.CountOfWorkshop)
+            else if (this.CountOfWorkshop < other.CountOfWorkshop)
             {
                 return -1;
             }

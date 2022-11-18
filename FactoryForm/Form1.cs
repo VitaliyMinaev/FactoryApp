@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Linq;
 using FactoryForm.Parsers;
 using FactoryForm.Helpers;
+using static System.Windows.Forms.ListView;
 
 namespace FactoryForm
 {
@@ -43,10 +44,7 @@ namespace FactoryForm
                     MoneyParser.ParseStringToCents(ProfitFromMasterTextBox.Text)
                );
 
-                var listViewFactory = new ListViewItem(factory.Title);
-                listViewFactory.Tag = factory;
-
-                factoriesListView.Items.Add(listViewFactory);
+               AddFactoryToListView(factory);
             }
             catch (ArgumentException exc)
             {
@@ -59,6 +57,14 @@ namespace FactoryForm
             {
                 MessageBox.Show(exc.Message, "Error");
             }
+        }
+
+        private void AddFactoryToListView(Factory factory)
+        {
+            var listViewFactory = new ListViewItem(factory.Title);
+            listViewFactory.Tag = factory;
+
+            factoriesListView.Items.Add(listViewFactory);
         }
 
         private void factoriesListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -228,6 +234,89 @@ namespace FactoryForm
                 textBox.BackColor = System.Drawing.Color.White;
                 AddBtn.Enabled = true;
             }
+        }
+
+        private void UniteFactoriesButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Tuple<Factory, Factory> factories = GetFactoriesByTitleFromListView
+                (UnitedFactory1TextBox.Text, UnitedFactory2TextBox.Text);
+
+                Factory firstToUnite = factories.Item1, secondToUnite = factories.Item2;
+
+                Factory unitedFactory = firstToUnite + secondToUnite;
+                AddFactoryToListView(unitedFactory);
+            }
+            catch (InvalidDataException exception)
+            {
+                MessageBox.Show(exception.Message, "Error");
+            }
+        }
+
+        private void CompareFactoriesButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Tuple<Factory, Factory> factories = GetFactoriesByTitleFromListView
+                (ComparedFactory1TextBox.Text, ComparedFactory2TextBox.Text);
+
+                Factory firstToCompare = factories.Item1, secondToCompare = factories.Item2;
+
+                int compareResult = firstToCompare.CompareTo(secondToCompare);
+
+                if (compareResult == 1)
+                {
+                    MessageBox.Show($"{firstToCompare.Title} are greater then {secondToCompare.Title}"
+                        , "Result of compare operation");
+                }
+                else if (compareResult == -1)
+                {
+                    MessageBox.Show($"{secondToCompare.Title} are greater then {firstToCompare.Title}"
+                        , "Result of compare operation");
+                }
+                else if (compareResult == 0)
+                {
+                    MessageBox.Show($"{secondToCompare.Title} are equal to {firstToCompare.Title}"
+                        , "Result of compare operation");
+                }
+            }
+            catch (InvalidDataException exception)
+            {
+                MessageBox.Show(exception.Message, "Error");
+            }
+        }
+
+        private Tuple<Factory, Factory> GetFactoriesByTitleFromListView(string factoryTitle1, string factoryTitle2)
+        {
+            ListViewItemCollection factories = factoriesListView.Items;
+            Factory firstFactory = null, secondFactory = null;
+
+            foreach (ListViewItem item in factories)
+            {
+                var factory = item.Tag as Factory;
+                if (factory.Title == factoryTitle1)
+                {
+                    firstFactory = factory;
+                }
+                else if (factory.Title == factoryTitle2)
+                {
+                    secondFactory = factory;
+                }
+            }
+
+            if (firstFactory == null)
+            {
+                string exceptionMessage = $"There is not factory with title: {factoryTitle1}";
+                throw new InvalidDataException(exceptionMessage);
+            }
+            else if (secondFactory == null)
+            {
+                string exceptionMessage = $"There is not factory with title: {factoryTitle2}";
+                throw new InvalidDataException(exceptionMessage);
+            }
+
+            return new Tuple<Factory, Factory>(firstFactory, secondFactory);
         }
     }
 }

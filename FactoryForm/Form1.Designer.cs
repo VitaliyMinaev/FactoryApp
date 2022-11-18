@@ -93,10 +93,10 @@
             // FireMasterButton
             // 
             this.FireMasterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FireMasterButton.BackColor = System.Drawing.Color.Red;
+            this.FireMasterButton.BackColor = System.Drawing.SystemColors.Control;
             this.FireMasterButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FireMasterButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FireMasterButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FireMasterButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FireMasterButton.Location = new System.Drawing.Point(168, 516);
             this.FireMasterButton.Name = "FireMasterButton";
             this.FireMasterButton.Size = new System.Drawing.Size(135, 33);
@@ -108,10 +108,10 @@
             // HireMasterButton
             // 
             this.HireMasterButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.HireMasterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.HireMasterButton.BackColor = System.Drawing.SystemColors.Control;
             this.HireMasterButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.HireMasterButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HireMasterButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.HireMasterButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HireMasterButton.Location = new System.Drawing.Point(21, 516);
             this.HireMasterButton.Name = "HireMasterButton";
             this.HireMasterButton.Size = new System.Drawing.Size(141, 33);
@@ -123,10 +123,10 @@
             // FireEmployeeButton
             // 
             this.FireEmployeeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FireEmployeeButton.BackColor = System.Drawing.Color.Red;
+            this.FireEmployeeButton.BackColor = System.Drawing.SystemColors.Control;
             this.FireEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FireEmployeeButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FireEmployeeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FireEmployeeButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FireEmployeeButton.Location = new System.Drawing.Point(168, 477);
             this.FireEmployeeButton.Name = "FireEmployeeButton";
             this.FireEmployeeButton.Size = new System.Drawing.Size(135, 33);
@@ -138,10 +138,10 @@
             // HireEmployeeButton
             // 
             this.HireEmployeeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.HireEmployeeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.HireEmployeeButton.BackColor = System.Drawing.SystemColors.Control;
             this.HireEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.HireEmployeeButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HireEmployeeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.HireEmployeeButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HireEmployeeButton.Location = new System.Drawing.Point(21, 477);
             this.HireEmployeeButton.Name = "HireEmployeeButton";
             this.HireEmployeeButton.Size = new System.Drawing.Size(141, 33);
@@ -159,6 +159,7 @@
             this.ProfitFromEmployeeTextBox.Name = "ProfitFromEmployeeTextBox";
             this.ProfitFromEmployeeTextBox.Size = new System.Drawing.Size(347, 30);
             this.ProfitFromEmployeeTextBox.TabIndex = 26;
+            this.ProfitFromEmployeeTextBox.TextChanged += new System.EventHandler(this.TextBoxes_Money_TextChanged);
             // 
             // label11
             // 
@@ -181,6 +182,7 @@
             this.MasterSalaryTextBox.Name = "MasterSalaryTextBox";
             this.MasterSalaryTextBox.Size = new System.Drawing.Size(347, 30);
             this.MasterSalaryTextBox.TabIndex = 24;
+            this.MasterSalaryTextBox.TextChanged += new System.EventHandler(this.TextBoxes_Money_TextChanged);
             // 
             // label10
             // 
@@ -203,6 +205,7 @@
             this.EmployeeSalaryTextBox.Name = "EmployeeSalaryTextBox";
             this.EmployeeSalaryTextBox.Size = new System.Drawing.Size(347, 30);
             this.EmployeeSalaryTextBox.TabIndex = 22;
+            this.EmployeeSalaryTextBox.TextChanged += new System.EventHandler(this.TextBoxes_Money_TextChanged);
             // 
             // label9
             // 
@@ -225,6 +228,7 @@
             this.CountOfMasterTextBox.Name = "CountOfMasterTextBox";
             this.CountOfMasterTextBox.Size = new System.Drawing.Size(347, 30);
             this.CountOfMasterTextBox.TabIndex = 18;
+            this.CountOfMasterTextBox.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // label7
             // 
@@ -247,6 +251,7 @@
             this.CountOfEmployeeTextBox.Name = "CountOfEmployeeTextBox";
             this.CountOfEmployeeTextBox.Size = new System.Drawing.Size(347, 30);
             this.CountOfEmployeeTextBox.TabIndex = 16;
+            this.CountOfEmployeeTextBox.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // label6
             // 
@@ -269,6 +274,7 @@
             this.CountOfWorkshopsTextBox.Name = "CountOfWorkshopsTextBox";
             this.CountOfWorkshopsTextBox.Size = new System.Drawing.Size(347, 30);
             this.CountOfWorkshopsTextBox.TabIndex = 14;
+            this.CountOfWorkshopsTextBox.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
             // label4
             // 
@@ -291,6 +297,7 @@
             this.ProfitFromMasterTextBox.Name = "ProfitFromMasterTextBox";
             this.ProfitFromMasterTextBox.Size = new System.Drawing.Size(347, 30);
             this.ProfitFromMasterTextBox.TabIndex = 12;
+            this.ProfitFromMasterTextBox.TextChanged += new System.EventHandler(this.TextBoxes_Money_TextChanged);
             // 
             // TitleTextBox
             // 

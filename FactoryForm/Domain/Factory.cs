@@ -4,8 +4,6 @@ namespace FactoryForm.Domain
 {
     public class Factory : IComparable<Factory>
     {
-        private string text;
-
         /* Properties */
         public string Title { get; set; }
 
@@ -66,10 +64,6 @@ namespace FactoryForm.Domain
             ProfitFromMaster = other.ProfitFromMaster;
         }
 
-        public Factory(string text)
-        {
-            this.text = text;
-        }
 
         /* Business logic */
         public bool HireEmployee()
@@ -99,13 +93,27 @@ namespace FactoryForm.Domain
 
         public bool FireEmployee()
         {
-            CountOfEmployee -= 1;
-            return true;
+            if (EstimateNumberOfEmployeeAndMaster(CountOfEmployee - 1, CountOfMasters))
+            {
+                CountOfEmployee -= 1;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public bool FireMaster()
         {
-            CountOfMasters -= 1;
-            return true;
+            if (EstimateNumberOfEmployeeAndMaster(CountOfEmployee, CountOfMasters - 1))
+            {
+                CountOfMasters -= 1;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -154,7 +162,7 @@ namespace FactoryForm.Domain
 
         private bool EstimateNumberOfEmployeeAndMaster(int countOfEmployee, int countOfMasters)
         {
-            if (countOfEmployee <= countOfMasters * 10 && (countOfEmployee == 0 || countOfMasters * 10 - countOfEmployee < 10))
+            if (countOfEmployee <= countOfMasters * 10 && (countOfEmployee == 0 || countOfMasters * 10 - countOfEmployee <= 10))
             {
                 return true;
             }

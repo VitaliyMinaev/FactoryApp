@@ -5,6 +5,9 @@ using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
+using FactoryForm.Parsers;
+using FactoryForm.Helpers;
 
 namespace FactoryForm
 {
@@ -28,21 +31,34 @@ namespace FactoryForm
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            var factory = new Factory(TitleTextBox.Text, 
-                int.Parse(CountOfWorkshopsTextBox.Text),
-                int.Parse(CountOfEmployeeTextBox.Text),
-                int.Parse(CountOfMasterTextBox.Text),
-                int.Parse(EmployeeSalaryTextBox.Text),
-                int.Parse(MasterSalaryTextBox.Text), 
-                int.Parse(ProfitFromEmployeeTextBox.Text),
-                int.Parse(ProfitFromMasterTextBox.Text));
+            try
+            {
+                var factory = new Factory(TitleTextBox.Text,
+                    int.Parse(CountOfWorkshopsTextBox.Text),
+                    int.Parse(CountOfEmployeeTextBox.Text),
+                    int.Parse(CountOfMasterTextBox.Text),
+                    MoneyParser.ParseStringToCents(EmployeeSalaryTextBox.Text),
+                    MoneyParser.ParseStringToCents(MasterSalaryTextBox.Text),
+                    MoneyParser.ParseStringToCents(ProfitFromEmployeeTextBox.Text),
+                    MoneyParser.ParseStringToCents(ProfitFromMasterTextBox.Text)
+               );
 
-            var listViewFactory = new ListViewItem(factory.Title);
-            listViewFactory.Tag = factory;
+                var listViewFactory = new ListViewItem(factory.Title);
+                listViewFactory.Tag = factory;
 
-            factoriesListView.Items.Add(listViewFactory);
+                factoriesListView.Items.Add(listViewFactory);
+            }
+            catch (ArgumentException exc)
+            {
+                MessageBox.Show(exc.Message, "Error");
 
-            ClearInputs();
+                CountOfEmployeeTextBox.BackColor = System.Drawing.Color.Red;
+                CountOfMasterTextBox.BackColor = System.Drawing.Color.Red;
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error");
+            }
         }
 
         private void factoriesListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,10 +73,10 @@ namespace FactoryForm
                     CountOfWorkshopsTextBox.Text    = factory.CountOfWorkshop.ToString();
                     CountOfEmployeeTextBox.Text     = factory.CountOfEmployee.ToString();
                     CountOfMasterTextBox.Text       = factory.CountOfMasters.ToString();
-                    EmployeeSalaryTextBox.Text      = factory.EmployeeSalary.ToString();
-                    MasterSalaryTextBox.Text        = factory.MasterSalary.ToString();
-                    ProfitFromEmployeeTextBox.Text  = factory.EmployeeSalary.ToString();
-                    ProfitFromMasterTextBox.Text    = factory.ProfitFromMaster.ToString();
+                    EmployeeSalaryTextBox.Text      = factory.EmployeeSalary.ParseCentsToString();
+                    MasterSalaryTextBox.Text        = factory.MasterSalary.ParseCentsToString();
+                    ProfitFromEmployeeTextBox.Text  = factory.ProfitFromEmployee.ParseCentsToString();
+                    ProfitFromMasterTextBox.Text    = factory.ProfitFromMaster.ParseCentsToString();
                 }
             }
             else
@@ -117,17 +133,33 @@ namespace FactoryForm
                 return;
 
             var factory = (Factory)factoriesListView.SelectedItems[0].Tag;
-            factory.HireEmployee();
+            bool status = factory.HireEmployee();
+            if (status == false)
+            {
+                MessageBox.Show("Inappropriate balance between employee and masters", "Error");
+            }
+            else
+            {
+                CountOfMasterTextBox.Text = factory.CountOfMasters.ToString();
+            }
+
             CountOfEmployeeTextBox.Text = factory.CountOfEmployee.ToString();
         }
-
         private void FireEmployeeButton_Click(object sender, EventArgs e)
         {
             if (factoriesListView.SelectedItems.Count == 0)
                 return;
 
             var factory = (Factory)factoriesListView.SelectedItems[0].Tag;
-            factory.FireEmployee();
+            bool status = factory.FireEmployee();
+            if (status == false)
+            {
+                MessageBox.Show("Inappropriate balance between employee and masters", "Error");
+            }
+            else
+            {
+                CountOfMasterTextBox.Text = factory.CountOfMasters.ToString();
+            }
             CountOfEmployeeTextBox.Text = factory.CountOfEmployee.ToString();
         }
 
@@ -137,18 +169,65 @@ namespace FactoryForm
                 return;
 
             var factory = (Factory)factoriesListView.SelectedItems[0].Tag;
-            factory.HireMaster();
-            CountOfMasterTextBox.Text = factory.CountOfMasters.ToString();
+            bool status = factory.HireMaster();
+            if (status == false)
+            {
+                MessageBox.Show("Inappropriate balance between employee and masters", "Error");
+            }
+            else
+            {
+                CountOfMasterTextBox.Text = factory.CountOfMasters.ToString();
+            }
         }
-
         private void FireMasterButton_Click(object sender, EventArgs e)
         {
             if (factoriesListView.SelectedItems.Count == 0)
                 return;
 
             var factory = (Factory)factoriesListView.SelectedItems[0].Tag;
-            factory.FireMaster();
+            bool status = factory.FireMaster();
+            if (status == false)
+            {
+                MessageBox.Show("Inappropriate balance between employee and masters", "Error");
+            }
+            else
+            {
+                CountOfMasterTextBox.Text = factory.CountOfMasters.ToString();
+            }
             CountOfMasterTextBox.Text = factory.CountOfMasters.ToString();
+        }
+
+        /* Validation methods */
+        private void TextBoxes_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            if(textBox.Text.Any(x => char.IsLetter(x)) == true)
+            {
+                textBox.BackColor = System.Drawing.Color.Red;
+                AddBtn.Enabled = false;
+            }
+            else
+            {
+                textBox.BackColor = System.Drawing.Color.White;
+                AddBtn.Enabled = true;
+            }
+        }
+        private void TextBoxes_Money_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            string text = textBox.Text;
+
+            if (text.ValidateString() != true)
+            {
+                textBox.BackColor = System.Drawing.Color.Red;
+                AddBtn.Enabled = false;
+            }
+            else
+            {
+                textBox.BackColor = System.Drawing.Color.White;
+                AddBtn.Enabled = true;
+            }
         }
     }
 }

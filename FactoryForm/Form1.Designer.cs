@@ -57,23 +57,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.CalculateProfitButton = new System.Windows.Forms.Button();
+            this.ProfitSumTextBox = new System.Windows.Forms.TextBox();
+            this.CompareFactoriesButton = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.ProfitFactoryTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.ComparedFactory2TextBox = new System.Windows.Forms.TextBox();
+            this.ComparedFactory1TextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.UniteFactoriesButton = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.UnitedFactory2TextBox = new System.Windows.Forms.TextBox();
             this.UnitedFactory1TextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.CompareFactoriesButton = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.ComparedFactory2TextBox = new System.Windows.Forms.TextBox();
-            this.ComparedFactory1TextBox = new System.Windows.Forms.TextBox();
-            this.ProfitFactoryTextBox = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.ProfitSumTextBox = new System.Windows.Forms.TextBox();
-            this.CalculateProfitButton = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -465,6 +465,145 @@
             this.panel2.Size = new System.Drawing.Size(359, 338);
             this.panel2.TabIndex = 14;
             // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(260, 257);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 20);
+            this.label18.TabIndex = 45;
+            this.label18.Text = "Factory";
+            // 
+            // CalculateProfitButton
+            // 
+            this.CalculateProfitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CalculateProfitButton.BackColor = System.Drawing.SystemColors.Control;
+            this.CalculateProfitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CalculateProfitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CalculateProfitButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CalculateProfitButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CalculateProfitButton.Location = new System.Drawing.Point(209, 288);
+            this.CalculateProfitButton.Name = "CalculateProfitButton";
+            this.CalculateProfitButton.Size = new System.Drawing.Size(141, 33);
+            this.CalculateProfitButton.TabIndex = 44;
+            this.CalculateProfitButton.Text = "Calculate";
+            this.CalculateProfitButton.UseVisualStyleBackColor = false;
+            this.CalculateProfitButton.Click += new System.EventHandler(this.CalculateProfitButton_Click);
+            // 
+            // ProfitSumTextBox
+            // 
+            this.ProfitSumTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProfitSumTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ProfitSumTextBox.Location = new System.Drawing.Point(5, 291);
+            this.ProfitSumTextBox.Name = "ProfitSumTextBox";
+            this.ProfitSumTextBox.Size = new System.Drawing.Size(198, 30);
+            this.ProfitSumTextBox.TabIndex = 43;
+            this.ProfitSumTextBox.TextChanged += new System.EventHandler(this.TextBoxes_Money_TextChanged);
+            // 
+            // CompareFactoriesButton
+            // 
+            this.CompareFactoriesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CompareFactoriesButton.BackColor = System.Drawing.SystemColors.Control;
+            this.CompareFactoriesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CompareFactoriesButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CompareFactoriesButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CompareFactoriesButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CompareFactoriesButton.Location = new System.Drawing.Point(209, 213);
+            this.CompareFactoriesButton.Name = "CompareFactoriesButton";
+            this.CompareFactoriesButton.Size = new System.Drawing.Size(141, 33);
+            this.CompareFactoriesButton.TabIndex = 37;
+            this.CompareFactoriesButton.Text = "Compare";
+            this.CompareFactoriesButton.UseVisualStyleBackColor = false;
+            this.CompareFactoriesButton.Click += new System.EventHandler(this.CompareFactoriesButton_Click);
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(4, 226);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(122, 20);
+            this.label17.TabIndex = 42;
+            this.label17.Text = "Calculate profit";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(258, 182);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(79, 20);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "Factory 2";
+            // 
+            // ProfitFactoryTextBox
+            // 
+            this.ProfitFactoryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProfitFactoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ProfitFactoryTextBox.Location = new System.Drawing.Point(5, 252);
+            this.ProfitFactoryTextBox.Name = "ProfitFactoryTextBox";
+            this.ProfitFactoryTextBox.Size = new System.Drawing.Size(345, 30);
+            this.ProfitFactoryTextBox.TabIndex = 42;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(258, 146);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(79, 20);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "Factory 1";
+            // 
+            // ComparedFactory2TextBox
+            // 
+            this.ComparedFactory2TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComparedFactory2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ComparedFactory2TextBox.Location = new System.Drawing.Point(5, 177);
+            this.ComparedFactory2TextBox.Name = "ComparedFactory2TextBox";
+            this.ComparedFactory2TextBox.Size = new System.Drawing.Size(345, 30);
+            this.ComparedFactory2TextBox.TabIndex = 39;
+            // 
+            // ComparedFactory1TextBox
+            // 
+            this.ComparedFactory1TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComparedFactory1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ComparedFactory1TextBox.Location = new System.Drawing.Point(5, 141);
+            this.ComparedFactory1TextBox.Name = "ComparedFactory1TextBox";
+            this.ComparedFactory1TextBox.Size = new System.Drawing.Size(345, 30);
+            this.ComparedFactory1TextBox.TabIndex = 38;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(4, 115);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(147, 20);
+            this.label14.TabIndex = 36;
+            this.label14.Text = "Compare factories";
+            // 
             // UniteFactoriesButton
             // 
             this.UniteFactoriesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -539,145 +678,6 @@
             this.label8.Size = new System.Drawing.Size(118, 20);
             this.label8.TabIndex = 32;
             this.label8.Text = "Unite factories";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(4, 115);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(147, 20);
-            this.label14.TabIndex = 36;
-            this.label14.Text = "Compare factories";
-            // 
-            // CompareFactoriesButton
-            // 
-            this.CompareFactoriesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompareFactoriesButton.BackColor = System.Drawing.SystemColors.Control;
-            this.CompareFactoriesButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CompareFactoriesButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CompareFactoriesButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CompareFactoriesButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CompareFactoriesButton.Location = new System.Drawing.Point(209, 213);
-            this.CompareFactoriesButton.Name = "CompareFactoriesButton";
-            this.CompareFactoriesButton.Size = new System.Drawing.Size(141, 33);
-            this.CompareFactoriesButton.TabIndex = 37;
-            this.CompareFactoriesButton.Text = "Compare";
-            this.CompareFactoriesButton.UseVisualStyleBackColor = false;
-            this.CompareFactoriesButton.Click += new System.EventHandler(this.CompareFactoriesButton_Click);
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(258, 182);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(79, 20);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "Factory 2";
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(258, 146);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 20);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "Factory 1";
-            // 
-            // ComparedFactory2TextBox
-            // 
-            this.ComparedFactory2TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComparedFactory2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ComparedFactory2TextBox.Location = new System.Drawing.Point(5, 177);
-            this.ComparedFactory2TextBox.Name = "ComparedFactory2TextBox";
-            this.ComparedFactory2TextBox.Size = new System.Drawing.Size(345, 30);
-            this.ComparedFactory2TextBox.TabIndex = 39;
-            // 
-            // ComparedFactory1TextBox
-            // 
-            this.ComparedFactory1TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ComparedFactory1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ComparedFactory1TextBox.Location = new System.Drawing.Point(5, 141);
-            this.ComparedFactory1TextBox.Name = "ComparedFactory1TextBox";
-            this.ComparedFactory1TextBox.Size = new System.Drawing.Size(345, 30);
-            this.ComparedFactory1TextBox.TabIndex = 38;
-            // 
-            // ProfitFactoryTextBox
-            // 
-            this.ProfitFactoryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProfitFactoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ProfitFactoryTextBox.Location = new System.Drawing.Point(5, 252);
-            this.ProfitFactoryTextBox.Name = "ProfitFactoryTextBox";
-            this.ProfitFactoryTextBox.Size = new System.Drawing.Size(345, 30);
-            this.ProfitFactoryTextBox.TabIndex = 42;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(4, 226);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(122, 20);
-            this.label17.TabIndex = 42;
-            this.label17.Text = "Calculate profit";
-            // 
-            // ProfitSumTextBox
-            // 
-            this.ProfitSumTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProfitSumTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ProfitSumTextBox.Location = new System.Drawing.Point(5, 291);
-            this.ProfitSumTextBox.Name = "ProfitSumTextBox";
-            this.ProfitSumTextBox.Size = new System.Drawing.Size(198, 30);
-            this.ProfitSumTextBox.TabIndex = 43;
-            // 
-            // CalculateProfitButton
-            // 
-            this.CalculateProfitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CalculateProfitButton.BackColor = System.Drawing.SystemColors.Control;
-            this.CalculateProfitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CalculateProfitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.CalculateProfitButton.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CalculateProfitButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CalculateProfitButton.Location = new System.Drawing.Point(209, 288);
-            this.CalculateProfitButton.Name = "CalculateProfitButton";
-            this.CalculateProfitButton.Size = new System.Drawing.Size(141, 33);
-            this.CalculateProfitButton.TabIndex = 44;
-            this.CalculateProfitButton.Text = "Calculate";
-            this.CalculateProfitButton.UseVisualStyleBackColor = false;
-            this.CalculateProfitButton.Click += new System.EventHandler(this.CalculateProfitButton_Click);
-            // 
-            // label18
-            // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(260, 257);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 20);
-            this.label18.TabIndex = 45;
-            this.label18.Text = "Factory";
             // 
             // Form1
             // 

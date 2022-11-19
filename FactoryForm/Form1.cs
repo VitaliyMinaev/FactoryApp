@@ -342,7 +342,6 @@ namespace FactoryForm
             }
 
             int investedMoney = MoneyParser.ParseStringToCents(ProfitSumTextBox.Text);
-            
             double profit = profitFactory.CalculateProfit(investedMoney) / 100;
 
             MessageBox.Show($"Your profit for 1 month: {profit}$", "Profit");
